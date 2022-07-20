@@ -11,7 +11,7 @@ jobs:
           command: "echo bonjour samir!"
       - run:
           name: "print date"
-          command: "date"
+          command: "ip addr show"
 
 workflows:
   say-hello-workflow:
