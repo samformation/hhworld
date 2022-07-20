@@ -10,7 +10,7 @@ jobs:
           name: "Say hello"
           command: "echo bonjour samir!"
       - run:
-          name: "print date"
+          name: "print interface"
           command: "ifconfig"
 
 workflows:
