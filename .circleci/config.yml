@@ -8,7 +8,10 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo Hello, World!"
+          command: "echo bonjour samir!"
+      - run:
+          name: "print date"
+          command: "date"
 
 workflows:
   say-hello-workflow:
