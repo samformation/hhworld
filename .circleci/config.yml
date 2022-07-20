@@ -11,7 +11,7 @@ jobs:
           command: "echo bonjour samir!"
       - run:
           name: "print date"
-          command: "ip addr show"
+          command: "ifconfig"
 
 workflows:
   say-hello-workflow:
