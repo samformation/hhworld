@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  checkout:
+  extraction:
     docker:
       - image: cimg/base:stable
     steps:
@@ -21,7 +21,7 @@ jobs:
 workflows:
   checkout-test-workflow:
     jobs:
-      - checkout
-      - test
+      - extraction
+      - test:
           requires:
-            - checkout
+            - extraction
