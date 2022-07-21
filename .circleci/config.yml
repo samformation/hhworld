@@ -23,3 +23,5 @@ workflows:
     jobs:
       - checkout
       - test
+          requires:
+            - checkout
