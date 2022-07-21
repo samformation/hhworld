@@ -1,19 +1,19 @@
 version: 2.1
 
 jobs:
-  say-hello:
+  test-checkout:
     docker:
       - image: cimg/base:stable
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo bonjour samir!"
-      - run:
-          name: "print interface"
-          command: "ifconfig"
+          name: "test checkout"
+          command: |
+            echo "verifier la presence du code github"
+            pwd
+            ls -l
 
 workflows:
-  say-hello-workflow:
+  test-checkout-workflow:
     jobs:
-      - say-hello
+      - test-checkout
