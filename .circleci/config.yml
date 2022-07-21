@@ -7,6 +7,12 @@ jobs:
     steps:
       - checkout
       
+  supervision_code:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout 
+      
   compilation:
     docker:
       - image: cimg/base:stable
@@ -47,6 +53,9 @@ workflows:
   checkout-test-workflow:
     jobs:
       - extraction
+      - supervision_code:
+          requires:
+            - extraction
       - compilation:
           requires:
             - extraction
