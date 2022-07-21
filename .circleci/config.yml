@@ -25,14 +25,23 @@ jobs:
           command: |
             echo "test du code"
 
-  deploiement:
+  deploiement_azur:
     docker:
       - image: cimg/base:stable
     steps:
       - run:
-          name: "deploiement image"
+          name: "deploiement azur"
           command: |
-            echo "deploiement"
+            echo "deploiement azur"
+
+  deploiement_ibm:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: "deploiement ibm"
+          command: |
+            echo "deploiement ibm"    
             
 workflows:
   checkout-test-workflow:
@@ -44,7 +53,9 @@ workflows:
       - test:
           requires:
             - compilation
-      - deploiement:
+      - deploiement_azur:
           requires:
             - test
-           
+      - deploiement_ibm:
+          requires:
+            - test
