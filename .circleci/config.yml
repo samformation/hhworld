@@ -6,22 +6,45 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-
+      
+  compilation:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: "compilation code"
+          command: |
+            echo "compilation"
+  
   test:
     docker:
       - image: cimg/base:stable
     steps:
-      - checkout
       - run:
           name: "test du code"
           command: |
-            ls -l
-            wc -l fichier.txt
+            echo "test du code"
 
+  deploiement:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: "deploiement image"
+          command: |
+            echo "deploiement"
+            
 workflows:
   checkout-test-workflow:
     jobs:
       - extraction
-      - test:
+      - compilation:
           requires:
             - extraction
+      - test:
+          requires:
+            - compilation
+      - deploiement:
+          requires:
+            - test
+           
