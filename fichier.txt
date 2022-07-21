@@ -1,0 +1,5 @@
+ma voiture est en panne
+le ciel est bleu
+cette semaine c'est canicule pour tous !!
+
+fin du fichier
