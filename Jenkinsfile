@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('ETAPE') {
       steps {
-        sh ls /root/
+        sh date
       }
     }
   }
