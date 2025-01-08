@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('ETAPE') {
+    stage('BUILD') {
       steps {
-        sh date
+        sh make
       }
     }
   }
