@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('ETAPE') {
       steps {
-        sh pwd
+        sh ls /root/
       }
     }
   }
